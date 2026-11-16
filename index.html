@@ -1,51 +1,290 @@
-<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Flipnote｜単語帳</title><style>
-*{box-sizing:border-box}body{margin:0;color:#263146;background:#f7f7f2;font:15px "Yu Gothic",Meiryo,sans-serif}button,input{font:inherit}button{cursor:pointer;color:inherit}header{height:68px;background:#fffef9;border-bottom:1px solid #d6d8d2;display:flex;align-items:center;justify-content:space-between;padding:0 5vw}.brand{font:bold 28px Georgia;display:flex;gap:13px;align-items:center}.logo{width:30px;height:24px;border:2px solid #fff;background:#365ace;border-radius:3px;box-shadow:-4px 3px #8faae6;transform:rotate(-10deg)}.brand small{font:12px sans-serif;color:#777e85;border-left:1px solid #c7c9ca;padding-left:15px}.btn,header button{border:1px solid #cbd0cb;background:#fffef9;border-radius:7px;padding:9px 16px;font-weight:600}.canvas{min-height:calc(100vh - 68px);background-image:radial-gradient(#c9ccc3 .8px,transparent 1px);background-size:16px 16px;padding:36px 20px}.wrap{max-width:840px;margin:auto}.heading{display:flex;align-items:center;justify-content:space-between;gap:12px}h1{font-size:29px;letter-spacing:.04em;margin:0}.eyebrow,.mono{font:11px monospace;letter-spacing:.14em;color:#53699a}.eyebrow{margin:0 0 8px}.stats{display:flex;align-items:center;gap:16px;margin:16px 0 0;color:#5e6570;font-size:13px}.track{height:5px;background:#dcded8;border-radius:4px;flex:1;overflow:hidden}.track i{display:block;background:#4160c5;height:100%}.stage{position:relative;width:min(100%,640px);height:clamp(238px,34vh,310px);margin:46px auto 28px;perspective:1100px}.sheet,.face{position:absolute;inset:0;border:1px solid #c4c4b8;border-radius:12px;background:#fffdf0}.s1{transform:rotate(2deg) translate(3px,8px);background:#e5e6dc;box-shadow:0 8px 15px #43463821}.s2{transform:rotate(-1.8deg) translate(-2px,5px);background:repeating-linear-gradient(#f2f0e6 0 25px,#dcdfd6 26px)}.tab{position:absolute;right:30px;top:-19px;background:#4869bf;color:white;font:bold 10px monospace;letter-spacing:.14em;padding:6px 18px 10px;border-radius:5px 5px 0 0}.move,.card{height:100%;position:relative}.move{touch-action:pan-y}.card{width:100%;border:0;padding:0;background:transparent;transform-style:preserve-3d;transition:transform .52s}.flip{transform:rotateY(180deg)}.face{backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(90deg,transparent 44px,#dc9b9780 45px,transparent 46px),repeating-linear-gradient(0deg,#fffdf1 0 27px,#dce2dd 28px);box-shadow:0 2px 4px #3f443622}.back{transform:rotateY(180deg)}.hole{position:absolute;top:17px;left:19px;width:12px;height:12px;border-radius:50%;background:#c7c8bb;box-shadow:inset 1px 2px 3px #77796b}.num{position:absolute;top:17px;right:22px;font:11px monospace;color:#858982}.word{font:clamp(32px,7vw,66px) Georgia,serif;color:#203253;max-width:84%;overflow-wrap:anywhere;line-height:1.14}.back .word{font:600 clamp(24px,4vw,38px) serif}.face small{color:#76808b;margin-bottom:12px;font:11px monospace;letter-spacing:.18em}.hint{position:absolute;bottom:17px;color:#6d7580;font-size:12px}.actions{display:flex;justify-content:center;gap:12px}.actions button{padding:13px 22px;border:1px solid #bfc7c4;border-radius:8px;background:#fffef9;font-weight:600}.actions .primary,dialog .primary{background:#365dc2;color:white;border-color:#365dc2}.summary{display:flex;justify-content:center;gap:27px;margin:27px auto;color:#646c73;font-size:13px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}.keyhelp{text-align:center;color:#737b80;font-size:12px;margin:25px 0}kbd{padding:2px 5px;border:1px solid #cdd1c8;border-radius:4px;background:#fffef9}.end{text-align:center;position:absolute;inset:0;background:#fffdf0;border:1px solid #c4c4b8;border-radius:12px;align-content:center}.end[hidden]{display:none}dialog{width:min(500px,93vw);max-height:80vh;border:1px solid #cdcfc5;border-radius:12px;background:#fffdf6;color:#263146;padding:24px}dialog::backdrop{background:#16223655}dialog h2{margin:0;font-size:20px}dialog label{display:block;margin:15px 0}dialog input{display:block;width:100%;padding:10px;margin-top:5px;border:1px solid #bec5bc;border-radius:5px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.item{padding:10px 0;border-bottom:1px solid #ddd}.item strong{font:20px Georgia}.item span{font-size:13px}.close{border:0;background:none;font-size:23px}.err{color:#963c33;text-align:center}@media(max-width:550px){.canvas{padding:28px 17px}.brand small{display:none}h1{font-size:23px}.actions{gap:6px}.actions button{padding:12px 9px;font-size:13px}.keyhelp{display:none}.stage{width:95%}.summary{gap:15px}}@media(prefers-reduced-motion:reduce){.card{transition:none}}
-html{-webkit-text-size-adjust:100%}body{overflow-x:hidden}header{padding-top:env(safe-area-inset-top);height:calc(68px + env(safe-area-inset-top))}.canvas{padding-bottom:calc(30px + env(safe-area-inset-bottom));min-height:calc(100svh - 68px - env(safe-area-inset-top))}.move{perspective:1100px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.card{display:block;-webkit-appearance:none;-webkit-transform-style:preserve-3d}.face{-webkit-backface-visibility:hidden;pointer-events:none}.front{transform:translateZ(1px)}.back{transform:rotateY(180deg) translateZ(1px)}button{min-height:44px;touch-action:manipulation}.card{touch-action:pan-y}.close{min-width:44px}dialog{overflow-y:auto}dialog input{font-size:16px}.end{display:flex;flex-direction:column;align-items:center;justify-content:center}.item{overflow-wrap:anywhere}.long .word{font-size:clamp(16px,4vw,24px);max-height:56%;overflow:auto}.long small{margin-bottom:4px}
-@media(max-width:550px){header{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}.canvas{padding-top:23px}.heading{gap:6px}.heading .btn{padding:8px;white-space:nowrap}.heading h1{font-size:clamp(18px,5vw,24px)}.stage{height:clamp(212px,34svh,320px);margin:37px auto 25px}.actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.actions button{padding:8px 2px;min-height:48px}.summary{gap:12px;flex-wrap:wrap}.stats{gap:9px}.word{max-width:83%}}
-dialog:not([open]){display:none}dialog.fallback[open]{position:fixed;inset:0;z-index:10;margin:auto;height:fit-content;box-shadow:0 0 0 100vmax #16223666}</style><noscript><p>このプレビューではカードを操作できません。iPhoneではFlipnoteのダウンロード案内にある起動手順に従って開いてください。</p></noscript><header><div class="brand"><i class="logo"></i>Flipnote <small>わたしの単語帳</small></div><button id="add">＋ カードを追加</button></header><main class="canvas"><div class="wrap"><p class="eyebrow">MY FLASHCARDS</p><div class="heading"><h1>英検準1級の英単語</h1><button class="btn" id="list">▤ カード一覧</button></div><div class="stats"><span>学習の進み具合</span><div class="track"><i id="bar"></i></div><b id="count"></b></div><div class="stage"><div class="sheet s1"></div><div class="sheet s2"></div><div class="tab">VOCABULARY</div><div class="move" id="move"><button class="card" id="card" aria-label="カードを裏返す"></button></div><section class="end" id="end" hidden><p class="mono">SESSION COMPLETE</p><h2>ひと通り学習しました</h2><button class="btn" id="restart"></button></section></div><div class="actions"><button id="again">← もう一度</button><button class="primary" id="turn">⟳ 裏返す</button><button id="good">覚えた →</button></div><div class="summary" aria-live="polite" id="summary"></div><div class="keyhelp"><kbd>Space</kbd> 裏返す　 <kbd>←</kbd> もう一度　 <kbd>→</kbd> 覚えた</div><p class="err" id="err"></p></div></main><dialog id="dlg"><div class="row"><h2 id="title"></h2><button class="close" id="closeDlg" aria-label="閉じる">×</button></div><div id="bodyDlg"></div></dialog><script>
-const $=id=>document.getElementById(id),key='flipnote-study-v1';
-const initial=[['resilient','回復力のある'],['allocate','割り当てる'],['plausible','もっともらしい'],['prosper','繁栄する'],['substantial','かなりの、相当な'],['anticipate','予期する'],['versatile','多才な、用途の広い'],['compensate','埋め合わせる'],['inevitable','避けられない'],['preserve','保存する、守る'],['reluctant','気が進まない'],['enhance','高める']];
-let state={cards:initial,queue:initial.map((_,i)=>i),again:[],good:[]},back=false,busy=false,drag=null,suppress=false;
-try{let saved=JSON.parse(localStorage.getItem(key));if(saved&&['cards','queue','again','good'].every(k=>Array.isArray(saved[k])))state=saved}catch{}
-function save(){try{localStorage.setItem(key,JSON.stringify(state))}catch{$('err').textContent='このブラウザでは学習記録を保存できません。'}}
-function esc(str){return String(str).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function draw(){let {cards,queue,again,good}=state,n=cards.length,id=queue[0],done=n-queue.length;$('count').textContent=done+' / '+n+' 枚';$('bar').style.width=done/n*100+'%';$('summary').innerHTML=[['#b5bbbd','未学習',queue.length],['#d1a35d','もう一度',again.length],['#659c83','覚えた',good.length]].map(([color,name,v])=>'<span><i class="dot" style="background:'+color+'"></i>'+name+' <b>'+v+'</b></span>').join('');$('end').hidden=queue.length>0;$('move').hidden=!queue.length;document.querySelector('.actions').style.visibility=queue.length?'visible':'hidden';$('restart').textContent=again.length?'もう一度の '+again.length+' 枚を復習':'最初から学習する';if(!queue.length)return;
-$('card').classList.remove('flip');back=false;$('card').innerHTML=cards[id].map((v,i)=>'<span class="face '+(i?'back':'front')+(v.length>22?' long':'')+'"><i class="hole"></i><span class="num">No. '+String(id+1).padStart(3,'0')+'</span><small>'+(i?'MEANING':'ENGLISH')+'</small><strong class="word">'+esc(v)+'</strong><span class="hint">'+(i?'左右に払って仕分ける':'⟳　タップして裏返す')+'</span></span>').join('')}
-function flip(){if(busy||!state.queue.length)return;back=!back;$('card').classList.toggle('flip',back)}
-function rate(known){if(busy||!state.queue.length)return;busy=true;let m=$('move'),d=known?1:-1;m.style.transition='transform .2s,opacity .2s';m.style.transform='translateX('+d*110+'px) rotate('+d*9+'deg)';m.style.opacity=0;setTimeout(()=>{state[known?'good':'again'].push(state.queue.shift());save();$('card').style.transition='none';draw();m.style.cssText='';void m.offsetWidth;$('card').style.transition='';busy=false},205)}
-$('card').onclick=e=>{if(e.detail===0||!suppress)flip();suppress=false};$('turn').onclick=flip;$('again').onclick=()=>rate(false);$('good').onclick=()=>rate(true);
-$('move').onpointerdown=e=>{
-  if(busy || !e.isPrimary || e.button!==0)return;
-  drag={id:e.pointerId,x:e.clientX,y:e.clientY,axis:null};
-  suppress=false;
-  if(e.currentTarget.setPointerCapture) {
-    try { $('card').setPointerCapture(e.pointerId) } catch {}
-  }
-};
-function trackGesture(e){
-  if(!drag || drag.id!==e.pointerId)return;
-  const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
-  if(!drag.axis && Math.max(Math.abs(dx),Math.abs(dy))>8){
-    drag.axis=Math.abs(dx)>Math.abs(dy)*1.2?'x':'y';
-    suppress=true;
-  }
-  if(drag.axis==='x')$('move').style.transform='translateX('+dx*.65+'px) rotate('+dx*.045+'deg)';
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6f7fb">
+<title>Flipnote｜毎日の学習を、一枚ずつ。</title>
+<style>
+:root{--ink:#252b43;--muted:#777e94;--purple:#6255ca;--line:#e8eaf2;--bg:#f6f7fb;--green:#267c69}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.6 Inter,-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;touch-action:manipulation}button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}button{color:inherit}button:focus-visible,a:focus-visible{outline:3px solid #b6adf1;outline-offset:4px}button:disabled{opacity:.45;cursor:default}[hidden]{display:none!important}header{padding:calc(18px + env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#fff}.brand{font-size:23px;font-weight:760;letter-spacing:-.8px;display:flex;gap:11px;align-items:center}.brandmark{width:31px;height:32px;background:var(--purple);border-radius:10px;display:grid;place-items:center;color:white;box-shadow:0 4px 10px #6255ca20}.brandmark svg{width:21px}.headernote{font-size:12px;color:var(--muted)}main{max-width:950px;margin:auto;padding:35px 28px calc(125px + env(safe-area-inset-bottom))}h1{font-size:29px;line-height:1.4;letter-spacing:-.6px;margin:4px 0 8px}h2{font-size:17px;margin:0}p{margin:0}.subtitle{color:var(--muted);font-size:13px}.kicker{font-size:12px;color:var(--purple);font-weight:650;margin-bottom:8px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.sectionhead{margin:29px 0 14px}.button{border:1px solid var(--line);background:white;border-radius:12px;min-height:46px;padding:10px 17px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:8px}.primary{background:var(--purple);border-color:var(--purple);color:white}.textbutton{border:0;background:none;color:var(--purple);font-size:13px;min-height:44px;padding:8px;font-weight:600}.icon{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.panel{border:1px solid var(--line);border-radius:18px;background:white}.deckselect{margin-top:24px;padding:16px 19px;display:flex;align-items:center;gap:13px}.deckicon{width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;border-radius:12px;background:#eeebfc;color:var(--purple)}.deckselect label{flex:1;min-width:0}.deckselect label span{font-size:11px;color:var(--muted);display:block}.deckselect select{width:100%;border:0;background:transparent;color:var(--ink);font-weight:650;min-height:30px;font-size:15px}.studybody{max-width:690px;margin:auto}.progresshead{margin:24px 2px 9px;font-size:12px;color:var(--muted)}.progresshead b{color:var(--ink);font-weight:600}.track{height:5px;background:#e6e5f0;border-radius:6px;overflow:hidden}.track i{display:block;height:100%;background:var(--purple);transition:width .2s}.stage{height:clamp(260px,37svh,345px);position:relative;margin:28px 4px 24px;perspective:1400px}.sheet{position:absolute;inset:0;border:1px solid #dedfeb;border-radius:21px;background:#f1f0fa;transform:rotate(1.9deg) translate(1px,8px)}.sheet.second{background:#fafaff;transform:rotate(-1deg) translate(-1px,4px)}.move{height:100%;position:relative;perspective:1400px;touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.card{height:100%;width:100%;display:block;border:0;padding:0;background:transparent;position:relative;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transition:transform .5s;touch-action:pan-y}.card.flip{transform:rotateY(180deg)}.face{position:absolute;inset:0;border:1px solid #dedfeb;border-radius:21px;background:#fff;box-shadow:0 12px 25px #33345b08;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 26px;pointer-events:none;transform:translateZ(1px)}.face.back{transform:rotateY(180deg) translateZ(1px)}.facelabel{position:absolute;top:21px;left:24px;font-size:11px;font-weight:600;letter-spacing:.1em;color:#9296ab}.number{position:absolute;right:24px;top:21px;font-size:11px;color:#9296ab}.word{font-size:clamp(30px,6vw,51px);font-weight:650;letter-spacing:-.7px;line-height:1.4;overflow-wrap:anywhere;white-space:pre-wrap;max-width:100%;max-height:75%;overflow:hidden}.back .word{font-size:clamp(23px,4vw,34px);font-weight:600}.face.long .word{font-size:clamp(16px,3.2vw,23px);overflow-y:auto;pointer-events:auto;touch-action:pan-y}.hint{position:absolute;bottom:19px;color:#9296ab;font-size:11px;display:flex;gap:7px;align-items:center}.hint svg{width:14px}.actions{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:11px}.actions .button{min-height:51px;font-size:13px;padding:10px 6px}.again{background:#fff8ee;color:#9b6b26;border-color:#f4e7cf}.good{background:#edf7f2;color:var(--green);border-color:#d6eade}.metrics{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px;padding:19px 6px}.metric{text-align:center;border-right:1px solid var(--line)}.metric:last-child{border:0}.metric strong{font-size:24px;line-height:1.3;font-weight:650;display:block}.metric span{font-size:11px;color:var(--muted)}.metric:nth-child(2) strong{color:#ad7c35}.metric:nth-child(3) strong{color:var(--green)}.swipehint{text-align:center;color:var(--muted);font-size:11px;margin-top:17px}.completion{position:absolute;inset:0;padding:30px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:13px}.completion .deckicon{background:#e6f5ec;color:var(--green);border-radius:50%;width:54px;height:54px}.tabs{position:fixed;z-index:20;left:0;right:0;bottom:0;background:#ffffffed;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:8px max(14px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center;gap:10px}.tab{min-height:53px;width:min(30%,220px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:none;border:0;color:#8b90a3;font-size:10px;border-radius:12px}.tab.active{background:#f0edfc;color:var(--purple);font-weight:700}.tab svg{width:21px;height:21px}.librarysummary{display:flex;align-items:center;gap:14px;margin-top:24px;padding:20px;background:#eeebfb;border-color:#e4def9}.librarysummary strong{font-size:22px;margin-right:5px}.librarysummary span{color:#706b8b;font-size:12px}.search{display:block;position:relative;margin:22px 0}.search svg{position:absolute;left:16px;top:15px;color:#8e94a9}.search input{padding-left:47px}.deckgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.decktile{padding:22px;display:flex;flex-direction:column;align-items:flex-start;gap:15px}.decktile h2{overflow-wrap:anywhere}.decktile p{color:var(--muted);font-size:12px;margin-top:4px}.decktile .tilebottom{width:100%;margin-top:auto}.tag{font-size:10px;color:var(--purple);background:#f2effc;padding:4px 9px;border-radius:6px}.empty{text-align:center;padding:45px 15px;color:var(--muted);grid-column:1/-1}.formpanel{padding:25px;margin-top:25px}.field{display:block;font-size:12px;font-weight:650;margin-bottom:18px}input,textarea{display:block;width:100%;border:1px solid #dfe2ed;background:white;border-radius:10px;padding:12px 14px;min-height:47px;color:var(--ink);font-size:16px;line-height:1.5;outline:none}input:focus,textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px #6255ca12}.field input{margin-top:7px}textarea{resize:vertical;min-height:95px}.cardseditor{margin-top:15px;display:flex;flex-direction:column;gap:14px}.editorcard{padding:20px;background:white;border:1px solid var(--line);border-radius:16px}.editorcard .row{margin-bottom:12px}.editorcard .row b{font-size:12px;color:var(--muted)}.remove{border:0;background:none;color:#8e8596;min-height:34px;min-width:44px}.editorfields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.editorfields label{font-size:11px;color:var(--muted)}.editorfields textarea{margin-top:6px}.addrow{margin:16px 0 24px;width:100%;border:1px dashed #c9c3e8;background:#f0edfb;color:var(--purple)}.formactions{display:flex;justify-content:flex-end;gap:12px}.notice{position:fixed;z-index:40;bottom:calc(90px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);padding:12px 20px;border-radius:12px;background:#30374e;color:white;font-size:13px;max-width:90%;box-shadow:0 6px 20px #30374e20}.error{color:#a14848;font-size:12px;margin-top:12px}.badge{font-size:11px;color:var(--muted)}.modal{position:fixed;inset:0;z-index:30;background:#252b4360;display:flex;align-items:center;justify-content:center;padding:22px}.modalbox{background:var(--bg);border-radius:20px;padding:25px;max-width:600px;width:100%;max-height:85svh;overflow:auto}.listitem{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:14px;overflow-wrap:anywhere;white-space:pre-wrap}.listitem span{color:var(--muted)}.close{min-width:44px;border:0;background:white;border-radius:10px;min-height:44px;font-size:23px}.modalbox .button{margin-top:20px}
+@media(min-width:900px){header{padding-left:calc((100vw - 894px)/2);padding-right:calc((100vw - 894px)/2)}main{padding-top:40px}.studybody{max-width:640px}.stage{height:315px}.metrics{margin-top:24px}.tabs{gap:40px}.tab{flex-direction:row;font-size:12px;gap:10px;min-height:47px}}
+@media(max-width:560px){header{padding:calc(14px + env(safe-area-inset-top)) 21px 14px}.brand{font-size:21px}.headernote{font-size:10px}main{padding:25px 20px calc(110px + env(safe-area-inset-bottom))}h1{font-size:25px}.deckselect{margin-top:20px;padding:13px 15px}.stage{margin-top:23px;height:clamp(235px,34svh,315px)}.deckgrid{grid-template-columns:1fr}.decktile{padding:20px}.formpanel{padding:20px}.editorfields{grid-template-columns:1fr;gap:12px}.formactions .button{flex:1;padding:10px}.actions{gap:7px}.actions .icon{width:17px}.metrics{padding:15px 0}.sectionhead{margin-top:24px}.word{font-size:clamp(27px,8vw,42px)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.card,.track i{transition:none}}
+</style>
+</head>
+<body>
+<svg aria-hidden="true" style="display:none"><defs>
+<symbol id="i-cards" viewBox="0 0 24 24"><path d="m5 4 14 2-2 16-14-2zM8 2l13 2-1 15M7 9l7 1M6 13l7 1"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M3 4h6l3 2 3-2h6v15h-6l-3 2-3-2H3zM12 6v15"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 8a8 8 0 1 0 0 9M20 3v6h-6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></symbol>
+</defs></svg>
+<header><div class="brand"><span class="brandmark"><svg class="icon"><use href="#i-cards"/></svg></span>Flipnote</div><span class="headernote">毎日の学習を、一枚ずつ。</span></header>
+<main>
+<section id="studyPage" aria-labelledby="studyHeading">
+<div class="studybody"><p class="kicker">今日も、少しずつ。</p><h1 id="studyHeading">学習をはじめよう</h1><p class="subtitle">思い出すたび、知識が自分のものに。</p>
+<div class="panel deckselect"><span class="deckicon"><svg class="icon"><use href="#i-book"/></svg></span><label for="deckSelect"><span>学習中のセット</span><select id="deckSelect"></select></label></div>
+<div class="progresshead row"><span>学習の進み具合</span><b id="progressText"></b></div><div class="track" role="progressbar" aria-label="学習の進み具合" aria-valuemin="0" aria-valuemax="100" id="progress"><i id="progressBar"></i></div>
+<div class="stage"><div class="sheet"></div><div class="sheet second"></div><div class="move" id="move"><button class="card" id="card" aria-label="カードを裏返す" aria-pressed="false"></button></div><div id="completion" class="panel completion" hidden><span class="deckicon"><svg class="icon"><use href="#i-check"/></svg></span><h2>おつかれさまでした！</h2><p class="subtitle" id="completeText"></p><button class="button primary" id="restart"></button></div></div>
+<div class="actions" id="actions"><button class="button again" id="again"><svg class="icon"><use href="#i-refresh"/></svg>もう一度</button><button class="button primary" id="flip"><svg class="icon"><use href="#i-cards"/></svg>裏返す</button><button class="button good" id="good"><svg class="icon"><use href="#i-check"/></svg>覚えた</button></div>
+<p class="swipehint">タップで裏返す · 左に払うと「もう一度」· 右で「覚えた」</p>
+<div class="panel metrics" id="metrics" aria-live="polite"></div>
+</div></section>
+<section id="libraryPage" aria-labelledby="libraryHeading" hidden>
+<p class="kicker">自分のペースで、学びを育てる。</p><div class="row"><h1 id="libraryHeading">ライブラリ</h1><button class="button primary" data-page="create"><svg class="icon"><use href="#i-plus"/></svg>作成</button></div><p class="subtitle">学びたいセットを選んで、続きをはじめましょう。</p>
+<div class="panel librarysummary"><span class="deckicon"><svg class="icon"><use href="#i-book"/></svg></span><div id="libraryStats"></div></div>
+<label class="search"><svg class="icon"><use href="#i-search"/></svg><input type="search" id="search" placeholder="セット名・科目で検索" aria-label="学習セットを検索"></label>
+<div class="row sectionhead"><h2>学習セット</h2><span class="badge" id="setCount"></span></div><div class="deckgrid" id="deckGrid"></div>
+</section>
+<section id="createPage" aria-labelledby="createHeading" hidden>
+<p class="kicker" id="createKicker">学びたいことを、カードに。</p><div class="row"><h1 id="createHeading">学習セットを作成</h1><button class="textbutton" id="cancelAppend" hidden>追加をキャンセル</button></div><p class="subtitle">表に問題、裏に答えを入力しましょう。</p>
+<form id="setForm"><div class="panel formpanel"><label class="field">セット名<input id="setName" placeholder="例：英検準1級の英単語" required maxlength="80"></label><label class="field" style="margin-bottom:0">科目<input id="setSubject" placeholder="例：英語、政治・経済" maxlength="40"></label></div>
+<div class="row sectionhead"><h2>カード</h2><span id="editorCount" class="badge"></span></div><div id="cardsEditor" class="cardseditor"></div><button class="button addrow" type="button" id="addRow"><svg class="icon"><use href="#i-plus"/></svg>カードを追加</button>
+<div class="formactions"><button class="button" type="submit" name="destination" value="library">セットを保存</button><button class="button primary" type="submit" name="destination" value="study">保存して学習</button></div></form>
+</section>
+<p id="storageError" class="error" role="status" hidden>このブラウザでは保存できません。入力したセットは、この画面を開いている間のみ使用できます。</p>
+</main>
+<nav class="tabs" aria-label="メインナビゲーション"><button class="tab active" data-page="study" aria-current="page"><svg class="icon"><use href="#i-cards"/></svg>学習</button><button class="tab" data-page="library"><svg class="icon"><use href="#i-book"/></svg>ライブラリ</button><button class="tab" data-page="create"><svg class="icon"><use href="#i-plus"/></svg>セット作成</button></nav>
+<div class="notice" id="notice" role="status" hidden></div>
+<div class="modal" id="modal" hidden><section role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="modalbox"><div class="row"><h2 id="modalTitle"></h2><button class="close" id="closeModal" aria-label="閉じる">×</button></div><div id="cardList"></div><button class="button primary" id="appendCards">カードを追加</button></section></div>
+<noscript>カードを使うには、ブラウザのJavaScriptを有効にしてください。</noscript>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const storageKey = 'flipnote-library-v2';
+const initialCards = [['resilient','回復力のある'],['allocate','割り当てる'],['plausible','もっともらしい'],['prosper','繁栄する'],['substantial','かなりの、相当な'],['anticipate','予期する'],['versatile','多才な、用途の広い'],['compensate','埋め合わせる'],['inevitable','避けられない'],['preserve','保存する、守る'],['reluctant','気が進まない'],['enhance','高める']];
+function freshSession(cards) { return {queue:cards.map((_, i) => i), again:[], good:[]}; }
+function validCards(cards) { return Array.isArray(cards) && cards.length > 0 && cards.every(card => Array.isArray(card) && card.length === 2 && card.every(text => typeof text === 'string' && text.trim())); }
+function normalizeSession(cards, session) {
+  if (!session || !['queue','again','good'].every(key => Array.isArray(session[key]))) return freshSession(cards);
+  const indices = [...session.queue, ...session.again, ...session.good];
+  if (indices.length !== cards.length || new Set(indices).size !== cards.length || indices.some(i => !Number.isInteger(i) || i < 0 || i >= cards.length)) return freshSession(cards);
+  return session;
 }
-$('move').onpointermove=trackGesture;
-$('move').onpointerup=e=>{
-  if(!drag || drag.id!==e.pointerId)return;
-  trackGesture(e);
-  const dx=e.clientX-drag.x, horizontal=drag.axis==='x';
-  drag=null;
-  if(horizontal && Math.abs(dx)>Math.min(60,$('move').clientWidth*.17))rate(dx>0);
-  else $('move').style.transform='';
+function loadState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey));
+    if (saved && Array.isArray(saved.sets) && saved.sets.length && saved.sets.every(set => typeof set.id === 'string' && typeof set.title === 'string' && validCards(set.cards))) {
+      saved.sets.forEach(set => { set.session = normalizeSession(set.cards, set.session); set.subject = typeof set.subject === 'string' ? set.subject : ''; });
+      return saved;
+    }
+    const legacy = JSON.parse(localStorage.getItem('flipnote-study-v1'));
+    const cards = legacy && validCards(legacy.cards) ? legacy.cards : initialCards;
+    return {activeId:'english', sets:[{id:'english',title:'英検準1級の英単語',subject:'英語',cards,session:normalizeSession(cards, legacy)}]};
+  } catch { return {activeId:'english',sets:[{id:'english',title:'英検準1級の英単語',subject:'英語',cards:initialCards,session:freshSession(initialCards)}]}; }
+}
+let state = loadState();
+if (!state.sets.some(set => set.id === state.activeId)) state.activeId = state.sets[0].id;
+let page = 'study', back = false, busy = false, drag = null, suppressClick = false, toastTimer, appendId = null, modalSetId = null, modalTrigger = null;
+const currentSet = () => state.sets.find(set => set.id === state.activeId);
+function save() {
+  try { localStorage.setItem(storageKey, JSON.stringify(state)); $('storageError').hidden = true; return true; }
+  catch { $('storageError').hidden = false; return false; }
+}
+function escapeHtml(text) { return String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function icon(name) { return '<svg class="icon" aria-hidden="true"><use href="#i-' + name + '"/></svg>'; }
+function toast(message) { clearTimeout(toastTimer); $('notice').textContent = message; $('notice').hidden = false; toastTimer = setTimeout(() => $('notice').hidden = true, 3000); }
+function showPage(next) {
+  page = next;
+  ['study','library','create'].forEach(name => $(name + 'Page').hidden = name !== page);
+  document.querySelectorAll('.tab').forEach(tab => {
+    const active = tab.dataset.page === page;
+    tab.classList.toggle('active', active);
+    if (active) tab.setAttribute('aria-current','page'); else tab.removeAttribute('aria-current');
+  });
+  if (page === 'study') renderStudy();
+  if (page === 'library') renderLibrary();
+  window.scrollTo({top:0,behavior:'instant'});
+}
+function renderStudy() {
+  const set = currentSet(), session = set.session, count = set.cards.length;
+  $('deckSelect').innerHTML = state.sets.map(deck => '<option value="' + escapeHtml(deck.id) + '">' + escapeHtml(deck.title) + '</option>').join('');
+  $('deckSelect').value = set.id;
+  const done = session.again.length + session.good.length, percent = Math.round(done / count * 100);
+  $('progressText').textContent = done + ' / ' + count + ' 枚';
+  $('progressBar').style.width = percent + '%';
+  $('progress').setAttribute('aria-valuenow', percent);
+  $('metrics').innerHTML = [[session.queue.length,'未学習'],[session.again.length,'もう一度'],[session.good.length,'覚えた']].map(([n,label]) => '<div class="metric"><strong>' + n + '</strong><span>' + label + '</span></div>').join('');
+  const complete = !session.queue.length;
+  $('completion').hidden = !complete;
+  $('move').hidden = complete;
+  $('actions').hidden = complete;
+  $('completeText').textContent = session.again.length ? 'もう一度の ' + session.again.length + ' 枚を復習しましょう。' : count + ' 枚すべて学習しました。';
+  $('restart').textContent = session.again.length ? 'もう一度のカードを復習' : '最初から学習する';
+  back = false;
+  $('card').classList.remove('flip');
+  $('card').setAttribute('aria-pressed','false');
+  if (complete) return;
+  const index = session.queue[0];
+  $('card').innerHTML = set.cards[index].map((text,i) => '<span class="face ' + (i ? 'back' : 'front') + (text.length > 30 ? ' long' : '') + '" aria-hidden="' + !!i + '"><span class="facelabel">' + (i ? '裏面' : '表面') + '</span><span class="number">' + (index + 1) + ' / ' + count + '</span><strong class="word">' + escapeHtml(text) + '</strong><span class="hint">' + icon('refresh') + (i ? '左右に払って仕分ける' : 'タップして答えをみる') + '</span></span>').join('');
+}
+function flip() {
+  if (busy || !currentSet().session.queue.length) return;
+  back = !back;
+  $('card').classList.toggle('flip', back);
+  $('card').setAttribute('aria-pressed', String(back));
+  $('card').querySelectorAll('.face').forEach((face,i) => face.setAttribute('aria-hidden', String(i !== Number(back))));
+}
+function rate(known) {
+  const set = currentSet();
+  if (busy || !set.session.queue.length) return;
+  busy = true;
+  const move = $('move'), direction = known ? 1 : -1;
+  move.style.transition = 'transform .2s, opacity .2s';
+  move.style.transform = 'translateX(' + direction * 120 + 'px) rotate(' + direction * 10 + 'deg)';
+  move.style.opacity = '0';
+  setTimeout(() => {
+    set.session[known ? 'good' : 'again'].push(set.session.queue.shift());
+    save();
+    $('card').style.transition = 'none';
+    if (page === 'study') renderStudy();
+    if (page === 'library') renderLibrary();
+    move.style.cssText = '';
+    void move.offsetWidth;
+    $('card').style.transition = '';
+    busy = false;
+  }, 210);
+}
+function startSet(id) { if (busy) return; state.activeId = id; save(); showPage('study'); }
+$('deckSelect').onchange = event => { if (busy) { event.target.value = state.activeId; return; } startSet(event.target.value); };
+$('card').onclick = event => { if (!suppressClick || event.detail === 0) flip(); suppressClick = false; };
+$('flip').onclick = flip;
+$('again').onclick = () => rate(false);
+$('good').onclick = () => rate(true);
+$('restart').onclick = () => { const set = currentSet(); if (set.session.again.length) { set.session.queue = set.session.again; set.session.again = []; } else set.session = freshSession(set.cards); save(); renderStudy(); };
+$('move').onpointerdown = event => {
+  if (busy || !event.isPrimary || event.button !== 0) return;
+  drag = {id:event.pointerId,x:event.clientX,y:event.clientY,axis:null};
+  suppressClick = false;
+  try { $('card').setPointerCapture(event.pointerId); } catch {}
 };
-$('move').onpointercancel=()=>{drag=null;suppress=true;$('move').style.transform=''};
-$('restart').onclick=()=>{if(state.again.length){state.queue=state.again;state.again=[]}else{state.queue=state.cards.map((_,i)=>i);state.good=[]}save();draw()};
-function closeDialog(){const d=$('dlg');if(typeof d.close==='function')d.close();else d.removeAttribute('open')}
-function modal(t,html){const d=$('dlg');$('title').textContent=t;$('bodyDlg').innerHTML=html;if(typeof d.showModal==='function')d.showModal();else{d.classList.add('fallback');d.setAttribute('open','')}}
-$('list').onclick=()=>modal('カード一覧（'+state.cards.length+'枚）',state.cards.map(([a,b])=>'<div class="item row"><strong>'+esc(a)+'</strong><span>'+esc(b)+'</span></div>').join(''));
-$('add').onclick=()=>{modal('カードを追加','<form id="form"><label>表面（英単語）<input id="front" required maxlength="80"></label><label>裏面（意味）<input id="meaning" required maxlength="100"></label><button class="btn primary">カードを追加</button></form>');$('front').focus();$('form').onsubmit=e=>{e.preventDefault();let a=$('front').value.trim(),b=$('meaning').value.trim();if(!a||!b)return;state.queue.push(state.cards.length);state.cards.push([a,b]);save();draw();closeDialog()}};
-$('closeDlg').onclick=()=>closeDialog();document.onkeydown=e=>{if($('dlg').open||e.repeat)return;if(e.code==='Space'&&(document.activeElement.tagName!=='BUTTON'||document.activeElement===$('card'))){e.preventDefault();flip()}if(e.key==='ArrowLeft')rate(false);if(e.key==='ArrowRight')rate(true)};draw()
-</script></html>
-
+function trackGesture(event) {
+  if (!drag || drag.id !== event.pointerId) return;
+  const dx = event.clientX - drag.x, dy = event.clientY - drag.y;
+  if (!drag.axis && Math.max(Math.abs(dx), Math.abs(dy)) > 8) { drag.axis = Math.abs(dx) > Math.abs(dy) * 1.2 ? 'x' : 'y'; suppressClick = true; }
+  if (drag.axis === 'x') $('move').style.transform = 'translateX(' + dx * .65 + 'px) rotate(' + dx * .045 + 'deg)';
+}
+$('move').onpointermove = trackGesture;
+$('move').onpointerup = event => {
+  if (!drag || drag.id !== event.pointerId) return;
+  trackGesture(event);
+  const dx = event.clientX - drag.x, horizontal = drag.axis === 'x';
+  drag = null;
+  if (horizontal && Math.abs(dx) > Math.min(60, $('move').clientWidth * .17)) rate(dx > 0);
+  else $('move').style.transform = '';
+};
+$('move').onpointercancel = () => { drag = null; suppressClick = true; $('move').style.transform = ''; };
+function renderLibrary() {
+  const query = $('search').value.trim().toLocaleLowerCase();
+  const sets = state.sets.filter(set => (set.title + ' ' + set.subject).toLocaleLowerCase().includes(query));
+  $('libraryStats').innerHTML = '<strong>' + state.sets.length + '</strong><span>セット</span>　<strong>' + state.sets.reduce((n,set) => n + set.cards.length, 0) + '</strong><span>枚のカード</span>';
+  $('setCount').textContent = sets.length + ' セット';
+  $('deckGrid').innerHTML = sets.length ? sets.map(set => '<article class="panel decktile"><div class="row" style="width:100%"><span class="deckicon">' + icon('book') + '</span><span class="tag">' + escapeHtml(set.subject || '未分類') + '</span></div><div><h2>' + escapeHtml(set.title) + '</h2><p>' + set.cards.length + ' 枚 · 覚えた ' + set.session.good.length + ' 枚</p></div><div class="row tilebottom"><button class="textbutton" data-view="' + escapeHtml(set.id) + '">カード一覧</button><button class="button primary" data-study="' + escapeHtml(set.id) + '">学習する →</button></div></article>').join('') : '<p class="empty">該当するセットがありません。</p>';
+}
+$('search').oninput = renderLibrary;
+function addEditorRow(front = '', answer = '') {
+  const row = document.createElement('div');
+  row.className = 'editorcard';
+  row.innerHTML = '<div class="row"><b></b><button class="remove" type="button" aria-label="このカードを削除">削除</button></div><div class="editorfields"><label>表面 · 問題<textarea class="frontInput" required maxlength="200" placeholder="例：resilient"></textarea></label><label>裏面 · 答え<textarea class="answerInput" required maxlength="200" placeholder="例：回復力のある"></textarea></label></div>';
+  row.querySelector('.frontInput').value = front;
+  row.querySelector('.answerInput').value = answer;
+  row.querySelector('.remove').onclick = () => { row.remove(); numberRows(); };
+  $('cardsEditor').append(row);
+  numberRows();
+}
+function numberRows() {
+  const rows = [...$('cardsEditor').children];
+  $('editorCount').textContent = rows.length + ' 枚';
+  rows.forEach((row,i) => { row.querySelector('b').textContent = 'カード ' + (i + 1); row.querySelector('.remove').disabled = rows.length === 1; });
+}
+$('addRow').onclick = () => { addEditorRow(); $('cardsEditor').lastElementChild.querySelector('textarea').focus(); };
+function resetEditor() {
+  appendId = null;
+  $('cancelAppend').hidden = true;
+  $('setForm').reset();
+  $('setName').readOnly = false;
+  $('setSubject').readOnly = false;
+  $('createHeading').textContent = '学習セットを作成';
+  $('cardsEditor').innerHTML = '';
+  addEditorRow();
+}
+$('cancelAppend').onclick = resetEditor;
+$('setForm').onsubmit = event => {
+  event.preventDefault();
+  const cards = [...$('cardsEditor').children].map(row => [row.querySelector('.frontInput').value.trim(), row.querySelector('.answerInput').value.trim()]);
+  const title = $('setName').value.trim();
+  if (!title || !validCards(cards)) { toast('セット名と、カードの両面を入力してください。'); return; }
+  let set;
+  if (appendId) {
+    set = state.sets.find(item => item.id === appendId);
+    const offset = set.cards.length;
+    set.cards.push(...cards);
+    set.session.queue.push(...cards.map((_,i) => offset + i));
+  } else {
+    set = {id:'set-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2,8),title,subject:$('setSubject').value.trim(),cards,session:freshSession(cards)};
+    state.sets.push(set);
+  }
+  state.activeId = set.id;
+  const persisted = save();
+  resetEditor();
+  $('search').value = '';
+  showPage(event.submitter && event.submitter.value === 'study' ? 'study' : 'library');
+  toast(persisted ? '学習セットを保存しました' : 'この画面を開いている間、学習できます');
+};
+function viewCards(id, trigger) {
+  modalSetId = id;
+  modalTrigger = trigger;
+  const set = state.sets.find(item => item.id === id);
+  $('modalTitle').textContent = set.title;
+  $('cardList').innerHTML = set.cards.map(([front,answer]) => '<div class="listitem"><strong>' + escapeHtml(front) + '</strong><span>' + escapeHtml(answer) + '</span></div>').join('');
+  $('modal').hidden = false;
+  $('closeModal').focus();
+}
+function closeModal() { $('modal').hidden = true; if (modalTrigger && modalTrigger.isConnected) modalTrigger.focus(); }
+$('closeModal').onclick = closeModal;
+$('modal').onclick = event => { if (event.target === $('modal')) closeModal(); };
+$('appendCards').onclick = () => {
+  const draft = $('setName').value.trim() || [...$('cardsEditor').querySelectorAll('textarea')].some(input => input.value.trim());
+  if (draft) { toast('作成中のセットを先に保存してください。'); return; }
+  const set = state.sets.find(item => item.id === modalSetId);
+  closeModal();
+  appendId = set.id;
+  $('cancelAppend').hidden = false;
+  $('setName').value = set.title;
+  $('setSubject').value = set.subject;
+  $('setName').readOnly = true;
+  $('setSubject').readOnly = true;
+  $('createHeading').textContent = 'カードを追加';
+  showPage('create');
+};
+document.addEventListener('click', event => {
+  const tab = event.target.closest('[data-page]');
+  if (tab) { showPage(tab.dataset.page); return; }
+  const study = event.target.closest('[data-study]');
+  if (study) startSet(study.dataset.study);
+  const view = event.target.closest('[data-view]');
+  if (view) viewCards(view.dataset.view, view);
+});
+document.addEventListener('keydown', event => {
+  if (!$('modal').hidden) {
+    if (event.key === 'Escape') closeModal();
+    if (event.key === 'Tab') {
+      const first = $('closeModal'), last = $('appendCards');
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+    return;
+  }
+  if (page !== 'study' || event.repeat || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
+  if (event.code === 'Space' && (event.target === $('card') || event.target.tagName !== 'BUTTON')) { event.preventDefault(); flip(); }
+  if (event.key === 'ArrowLeft') { event.preventDefault(); rate(false); }
+  if (event.key === 'ArrowRight') { event.preventDefault(); rate(true); }
+});
+resetEditor();
+renderStudy();
+save();
+</script>
+</body>
+</html>
