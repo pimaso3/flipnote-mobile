@@ -15,6 +15,43 @@
 header{background:#fffefa;border-color:var(--line)}.brand{font-family:Georgia,serif;font-size:29px}.brandmark{border-radius:9px;box-shadow:none}.headerlink{background:transparent;border:0;color:var(--purple);display:inline-flex;align-items:center;gap:7px;min-height:44px;font-size:12px;font-weight:650}.headerlink .icon{width:17px}
 main{max-width:1100px}h1{font-size:clamp(25px,3.2vw,37px);line-height:1.35;letter-spacing:-.035em;overflow-wrap:anywhere}.studybody{max-width:none}.studytitle{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}.studytitle .headerlink{flex-shrink:0}.subjectline,.tag{background:#e1ebdd;color:#365e43;border-radius:5px;padding:3px 9px;font-size:11px;font-weight:650}.studylayout{display:grid;grid-template-columns:minmax(0,1fr) minmax(215px,.4fr);gap:24px;align-items:start}.practice{background:#eaf0e6;border:1px solid #dce4d7;border-radius:20px;padding:24px;min-width:0}.progresshead{margin:0 0 9px;color:#536b5d}.track{background:#d3dfcf}.track i{background:#588566}.stage{height:clamp(240px,34vh,330px);margin:24px 4px 25px}.sheet{background:#dce4d6;border-color:#cbd7c7}.sheet.second{background:#f3f6ef}.face{background:#fffefa;border-color:#d8dfd3;border-radius:16px}.word{font-family:Georgia,"Yu Mincho",serif;font-size:clamp(33px,5vw,58px);letter-spacing:-.035em}.facelabel,.number,.hint{color:#64756a}.actions{gap:8px}.again{background:#fffaf0;border-color:#e2d7bb;color:#825a24}.good{background:#f8fff8;color:#286042;border-color:#bed4c3}.swipehint{color:#5f7065}.record{padding:22px;background:#fffefa;border:1px solid var(--line);border-radius:18px}.recordhead,.mastery{display:flex;align-items:center;gap:10px}.notebookicon{background:#eaf0e6;color:#426a50;border-radius:6px;padding:2px 7px}.mastery{margin:22px 0}.mastery b,.mastery small{display:block}.mastery small{color:var(--muted);font-size:10px}.ring{flex:none;width:65px;height:65px;display:grid;place-items:center;border-radius:50%;background:conic-gradient(#59896b var(--mastery,0%),#e7ece4 0)}.ring strong{display:grid;place-items:center;border-radius:50%;background:#fffefa;width:53px;height:53px;font-size:17px}.metrics{margin:0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;padding:8px 0 0}.metric{display:flex;align-items:center;justify-content:space-between;flex-direction:row-reverse;padding:5px 0;border:0}.metric strong{font-size:19px}.metric span{color:var(--muted);font-size:12px}.tabs{background:#fffefaee}.tab.active,.deckicon,.addrow{background:#e6efe2;color:#295b40}.textbutton,.headerlink{color:#315d46}.librarysummary{background:#e8efe3;border-color:#d6e2d2}.librarysummary span{color:var(--muted)}.tilehead,.tileprogress{width:100%}.tileprogress{height:5px;background:#e9ede6;border-radius:9px;overflow:hidden}.tileprogress i{display:block;background:#608768;height:100%}.reviewline{color:#6b6245;font-size:12px}.addrow{border-color:#aec3af}.deckselect{margin:0 0 16px}.headerlink:focus-visible,.button:focus-visible{outline-color:#a8c9b4}.decktile{gap:12px}.tag{overflow-wrap:anywhere;max-width:75%}.search input:focus,input:focus,textarea:focus{box-shadow:0 0 0 3px #53825a18}
 @media(max-width:760px){.studylayout{grid-template-columns:1fr;gap:17px}.studytitle{margin-bottom:15px}.practice{padding:16px 14px}.stage{height:clamp(218px,31svh,300px);margin:18px 3px 23px}.actions .button{font-size:12px}.record{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:15px}.recordhead h2{font-size:14px}.recordhead{gap:5px}.mastery{justify-self:end;margin:0;gap:7px}.ring{width:40px;height:40px}.ring strong{width:32px;height:32px;font-size:10px}.mastery b{font-size:12px}.mastery small{display:none}.metrics{grid-column:1/-1;grid-template-columns:repeat(3,1fr);gap:8px}.metric{justify-content:center;gap:7px}.metric strong{font-size:17px}.studytitle .headerlink{font-size:11px}.swipehint{font-size:10px;margin-top:12px}}
+.flip-practice-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, .68fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 24px;
+}
+.flip-practice-demo { padding: 20px; text-align: center; }
+.flip-practice-demo .stage { margin-top: 0; }
+.flip-practice-demo .card { transition: transform var(--demo-flip-duration, 480ms) ease-in-out; }
+.flip-practice-demo .card[aria-pressed="true"] { transform: rotateY(180deg); }
+.flip-practice-demo .button { min-width: 156px; }
+.flip-speed-panel { padding: 20px; }
+.flip-speed-panel output { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.flip-speed-panel input[type="range"] {
+  accent-color: var(--purple);
+  display: block;
+  width: 100%;
+  margin: 9px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  min-height: 44px;
+  cursor: pointer;
+}
+.flip-speed-panel .subtitle { margin-top: 6px; }
+.flip-speed-panel .textbutton { margin-top: 8px; }
+.tabs .tab { width: min(25%, 176px); }
+@media (max-width: 760px) {
+  .flip-practice-layout { grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+  .flip-practice-demo { padding: 15px; }
+  .flip-practice-demo .stage { height: clamp(175px, 28svh, 260px); }
+  .flip-speed-panel { padding: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flip-practice-demo .card { transition: none; }
+}
 </style>
 </head>
 <body>
@@ -50,8 +87,35 @@ main{max-width:1100px}h1{font-size:clamp(25px,3.2vw,37px);line-height:1.35;lette
 <div class="formactions"><button class="button" type="submit" name="destination" value="library">セットを保存</button><button class="button primary" type="submit" name="destination" value="study">保存して学習</button></div></form>
 </section>
 <p id="storageError" class="error" role="status" hidden>このブラウザでは保存できません。入力したセットは、この画面を開いている間のみ使用できます。</p>
+<section id="practicePage" aria-labelledby="flipPracticeHeading" hidden>
+  <h1 id="flipPracticeHeading">めくり練習</h1>
+  <div class="flip-practice-layout">
+    <div class="practice flip-practice-demo">
+      <div class="stage">
+        <div class="move">
+          <button class="card" id="practiceCard" type="button" aria-label="カードを裏返す" aria-pressed="false">
+            <span class="face front"><span class="facelabel">表</span><strong class="word">resilient</strong></span>
+            <span class="face back" aria-hidden="true"><span class="facelabel">裏</span><strong class="word">回復力のある</strong></span>
+          </button>
+        </div>
+      </div>
+      <button id="practiceFlip" class="button primary" type="button">答えを見る</button>
+    </div>
+    <div class="panel flip-speed-panel">
+      <div class="row">
+        <label for="flipSpeed"><strong>反転時間</strong></label>
+        <output id="flipTime" for="flipSpeed" aria-live="off">0.48秒</output>
+      </div>
+      <input id="flipSpeed" type="range" min="200" max="800" step="10" value="480" aria-valuetext="0.48秒">
+      <div class="row subtitle" aria-hidden="true"><span>速い</span><span>ゆっくり</span></div>
+      <p class="subtitle">このカードの速度を調整できます。</p>
+      <button id="resetFlipSpeed" class="textbutton" type="button">標準の0.48秒に戻す</button>
+      <p class="subtitle" id="practiceMotionNotice" hidden>端末で視差効果を減らす設定が有効なため、カードは瞬時に切り替わります。</p>
+    </div>
+  </div>
+</section>
 </main>
-<nav class="tabs" aria-label="メインナビゲーション"><button class="tab active" data-page="study" aria-current="page"><svg class="icon"><use href="#i-cards"/></svg>学習</button><button class="tab" data-page="library"><svg class="icon"><use href="#i-book"/></svg>ライブラリ</button><button class="tab" data-page="create"><svg class="icon"><use href="#i-plus"/></svg>セット作成</button></nav>
+<nav class="tabs" aria-label="メインナビゲーション"><button class="tab active" data-page="study" aria-current="page"><svg class="icon"><use href="#i-cards"/></svg>学習</button><button class="tab" data-page="library"><svg class="icon"><use href="#i-book"/></svg>ライブラリ</button><button class="tab" data-page="create"><svg class="icon"><use href="#i-plus"/></svg>セット作成</button><button class="tab" data-page="practice"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>めくり練習</button></nav>
 <div class="notice" id="notice" role="status" hidden></div>
 <div class="modal" id="modal" hidden><section role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="modalbox"><div class="row"><h2 id="modalTitle"></h2><button class="close" id="closeModal" aria-label="閉じる">×</button></div><div id="cardList"></div><button class="button primary" id="appendCards">カードを追加</button></section></div>
 <noscript>カードを使うには、ブラウザのJavaScriptを有効にしてください。</noscript>
@@ -93,7 +157,7 @@ function icon(name) { return '<svg class="icon" aria-hidden="true"><use href="#i
 function toast(message) { clearTimeout(toastTimer); $('notice').textContent = message; $('notice').hidden = false; toastTimer = setTimeout(() => $('notice').hidden = true, 3000); }
 function showPage(next) {
   page = next;
-  ['study','library','create'].forEach(name => $(name + 'Page').hidden = name !== page);
+  ['study','library','create','practice'].forEach(name => $(name + 'Page').hidden = name !== page);
   document.querySelectorAll('.tab').forEach(tab => {
     const active = tab.dataset.page === page;
     tab.classList.toggle('active', active);
@@ -310,8 +374,43 @@ document.addEventListener('keydown', event => {
   if (event.key === 'ArrowLeft') { event.preventDefault(); rate(false); }
   if (event.key === 'ArrowRight') { event.preventDefault(); rate(true); }
 });
+const practiceCard = $('practiceCard');
+const practiceFaces = practiceCard.querySelectorAll('.face');
+const flipSpeed = $('flipSpeed');
+
+function flipPracticeCard() {
+  const showAnswer = practiceCard.getAttribute('aria-pressed') === 'false';
+  practiceCard.setAttribute('aria-pressed', String(showAnswer));
+  practiceFaces[0].setAttribute('aria-hidden', String(showAnswer));
+  practiceFaces[1].setAttribute('aria-hidden', String(!showAnswer));
+  $('practiceFlip').textContent = showAnswer ? '問題に戻る' : '答えを見る';
+}
+
+function updatePracticeSpeed() {
+  const seconds = (Number(flipSpeed.value) / 1000).toFixed(2) + '秒';
+  practiceCard.style.setProperty('--demo-flip-duration', flipSpeed.value + 'ms');
+  flipSpeed.setAttribute('aria-valuetext', seconds);
+  $('flipTime').textContent = seconds;
+}
+
+practiceCard.onclick = flipPracticeCard;
+$('practiceFlip').onclick = flipPracticeCard;
+flipSpeed.oninput = updatePracticeSpeed;
+$('resetFlipSpeed').onclick = () => {
+  flipSpeed.value = flipSpeed.defaultValue;
+  updatePracticeSpeed();
+};
+updatePracticeSpeed();
+if (typeof window.matchMedia === 'function') {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const updateMotionNotice = () => { $('practiceMotionNotice').hidden = !reducedMotion.matches; };
+  updateMotionNotice();
+  reducedMotion.addEventListener?.('change', updateMotionNotice);
+}
+
 resetEditor();
-renderStudy();
+if (window.location?.hash === '#flip-practice') showPage('practice');
+else renderStudy();
 save();
 </script>
 </body>
